@@ -6,13 +6,15 @@ class Program
     {
         //Console.WriteLine("Hello Prep1 World!");
 
+        //The User input his/her name
+
         Console.Write("What is your first name? ");
-        string firstname = Console.ReadLine();
+        string firstName = Console.ReadLine();
 
         Console.Write("What is your last name? ");
-        string lastname = Console.ReadLine();
+        string lastName = Console.ReadLine();
 
-        Console.WriteLine($"Your name is {lastname}, {firstname} {lastname}");
+        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}");
 
     }
 }
