@@ -6,7 +6,7 @@ class Program
     {
         //Console.WriteLine("Hello Prep1 World!");
 
-        //The User input his/her name
+        //The User input his/her first and lastname
 
         Console.Write("What is your first name? ");
         string firstName = Console.ReadLine();
