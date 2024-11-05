@@ -6,32 +6,38 @@ class Program
     {
         //Console.WriteLine("Hello Prep2 World!");
 
-        //Ask the user for grade percentage
+        //Ask the user for their grade percentage
         Console.Write("Enter your grade percentage: ");
         int gradePercentage = int.Parse(Console.ReadLine());
+
+        string letter = "";
 
         //Determine the letter grade
         if (gradePercentage >= 90)
 
         {
-            Console.WriteLine("Your letter grade is A.");
+            letter = "A";
         }
         else if (gradePercentage >= 80)
         {
-            Console.WriteLine("Your letter grade is B.");
+            letter = "B";
         }
         else if (gradePercentage >= 70)
         {
-            Console.WriteLine("Your letter grade is C.");
+            letter = "C";
         }
         else if (gradePercentage >= 60)
         {
-            Console.WriteLine("Your letter grade is D.");
+            letter = "D";
         }
         else
         {
-            Console.WriteLine("Your letter grade is F.");
+            letter = "F";
         }
+
+        //Print the letter grade once
+        Console.WriteLine($"Your letter grade is {letter}.");
+
         if (gradePercentage >= 70)
         {
             Console.WriteLine("Congratulation! You passed the course.");
