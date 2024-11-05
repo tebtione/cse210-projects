@@ -10,7 +10,7 @@ class Program
         Console.Write("Enter your grade percentage: ");
         int gradePercentage = int.Parse(Console.ReadLine());
 
-        //Determin the letter grade
+        //Determine the letter grade
         if (gradePercentage >= 90)
 
         {
@@ -38,7 +38,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("This is not it! Keep trying for next time.");
+            Console.WriteLine("You can do better! Keep trying for next time.");
         }
     }
 }
