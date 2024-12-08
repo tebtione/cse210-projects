@@ -1,13 +1,15 @@
 using System;
 
 namespace MindfulnessProgram
-{
+{   
+    // Class for the Breathing Activity
     public class BreathingActivity : MindfulnessProgram
     {
         public void ExecuteActivity()
-        {
+        {   
+            // Set end time based on duration
             DateTime endTime = DateTime.Now.AddSeconds(_durationInSeconds);
-            
+
             while (DateTime.Now < endTime)
             {
                 Console.WriteLine("Breathe in...");
@@ -15,7 +17,7 @@ namespace MindfulnessProgram
                 Console.WriteLine("Breathe out...");
                 ShowCountdown(4);
             }
-            EndActivity();
+            EndActivity(); // Call to end the activity
         }
     }
 }
