@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 
 namespace MindfulnessProgram
-{
+{   
+    // Class for the Listing Activity
     pubiic class ListingActivity : MindfulnessProgram
-    {
+    {   
+        // Prompts for listing activities
         private List<string> _prompts = new List<string>
         {
             "Who are people that you appreciate?",
@@ -14,6 +16,7 @@ namespace MindfulnessProgram
             "Who are some of your personal heroes?"
         };
 
+    // Executes the listing activity
     pubiic void ExecuteActivity()
     {
         Random rand = new Random();
@@ -23,9 +26,10 @@ namespace MindfulnessProgram
         Console.WriteLine("Start listing items (press enter after each item, type 'done' to finish):");
 
         List<string> items = new List<string>();
+        // Set end time based on duration
         DateTime endTime = DateTime.Now.AddSeconds(_durationInSeconds);
 
-        while (DateTime.Now < endTime)
+        while (DateTime.Now < endTime) // Loop until time is up
         {
            string itme = Console.ReadLine();
            if (item.ToLower() == "done") 
@@ -33,7 +37,7 @@ namespace MindfulnessProgram
            items.Add(item);
         }
         Console.WriteLine($"You listed {items.Count} items.");
-        EndActivity();
+        EndActivity(); // Call to end the activity
         }
     }
 }
