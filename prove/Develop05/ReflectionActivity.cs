@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 
 namespace MindfulnessProgram
-{
+{   
+    // Class for the Reflection Activity
     public class ReflectionActivity : MindfulnessProgram
-    {
+    {   
+        // Prompts for reflection
         private List<string> _prompts = new List<string>
         {
             "Think of a time when you stood up for someone else.",
@@ -13,6 +15,7 @@ namespace MindfulnessProgram
             "Think of a time when you did something truly selfless."
         };
 
+        // Questions for deeper reflections
         private List<string> _questions = new List<string>
         {
             "Why was this experience meaningful to you?",
@@ -26,6 +29,7 @@ namespace MindfulnessProgram
             "How can you keep this experience in mind in the future?"
         };
 
+        // Execute the reflection activity
         public void ExecuteActivity()
         {
             Random rand = new Random();
@@ -42,18 +46,18 @@ namespace MindfulnessProgram
                 Console.WriteLine(question);
                 ShowSpinner(3);
             }
-            EndActivity();
+            EndActivity(); // Call to end the activity
         }
 
         private void ShowSpinner(int seconds)
         {
-            string[] spinner = {"/", "-", "\\", "|"};
-            for (int i = 0; i < seconds; i++)
+            string[] spinner = {"/", "-", "\\", "|"}; // Spinner characters
+            for (int i = 0; i < seconds; i++) // Loop for the specified seconds
             {
                 foreach (var s in spinner)
                 {
-                    Console.Write(s + "\r");
-                    Thread.Sleep(250);
+                    Console.Write(s + "\r"); // Display spinner
+                    Thread.Sleep(250); // Pause briefly
                 }
             }
         }
