@@ -3,12 +3,14 @@ using System.Threading;
 
 namespace MindfulnessProgram
 {
+    // Base class for mindfulness activities
     public class MindfulnessProgram
     {
-        protected int _durationInSeconds;
+        protected int _durationInSeconds; // Duration of the activity in seconds
         protected string _activityName;
         protected string _description;
 
+        // Starts the activity by displaying its name and description
         public void StartActivity(string activityName, string description)
         {
             _activityName = activityName;
@@ -23,6 +25,7 @@ namespace MindfulnessProgram
             ShowCountdown(5);
         }
         
+        // Display a countdown
         public void ShowCountdown(int seconds)
         {
             for (int i = seconds; i > 0; i==)
@@ -32,7 +35,8 @@ namespace MindfulnessProgram
             }
             Console.WriteLine();
         }
-
+        
+        // End the activity and gives feedback to the user
         protected void EndActivity()
         {
            Console.WriteLine("Well done!");
