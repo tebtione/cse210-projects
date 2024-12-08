@@ -6,6 +6,7 @@ class Program
     {
         // Console.WriteLine("Hello Develop05 World!");
 
+        // Main loop for choosing activities
         while (true)
         {
             Console.Clear();
@@ -15,13 +16,14 @@ class Program
             Console.WriteLine("3. Listing Activity");
             Console.WriteLine("4. Exit");
 
-            string choice = Console.ReadLine();
-            switch (choice)
+            string choice = Console.ReadLine(); // Read user choice
+            switch (choice) // Handle user choice
             {
-                case "1":
+                case "1": 
                 BreathingActivity breathingActivity = new BreathingActivity();
+                // Create instance of BreathingActivity
 
-                breathingActivity.StartActivity();
+                breathingActivity.StartActivity(); // Start the activity
                 breathingActivity.ExecuteActivity();
                 break;
 
@@ -36,18 +38,18 @@ class Program
                 ListingActivity listActivity = new ListingActivity();
 
                 listActivity.StartActivity();
-                listActivity.ExecuteActivity();
+                listActivity.ExecuteActivity(); // Execute the activity
                 break;
 
                 case "4":
-                return;
+                return; // Exit the program
 
                 default:
                 Console.WriteLine("Invalid choice. Please try again.");
                 break;
             }
             Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+            Console.ReadKey(); // Wait for the user input
             
         }
     }
