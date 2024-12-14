@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 
 namespace MindfulnessProgram
-{   
+{
     // Class for the Listing Activity
-    pubiic class ListingActivity : MindfulnessProgram
-    {   
+    public class ListingActivity : MindfulnessActivity
+    {
         // Prompts for listing activities
         private List<string> _prompts = new List<string>
         {
@@ -16,28 +16,33 @@ namespace MindfulnessProgram
             "Who are some of your personal heroes?"
         };
 
-    // Executes the listing activity
-    pubiic void ExecuteActivity()
-    {
-        Random rand = new Random();
-        string prompt = _prompts[rand.Next(_prompts.Count)];
-        Console.WriteLine(prompt);
-        ShowCountdown(5);
-        Console.WriteLine("Start listing items (press enter after each item, type 'done' to finish):");
-
-        List<string> items = new List<string>();
-        // Set end time based on duration
-        DateTime endTime = DateTime.Now.AddSeconds(_durationInSeconds);
-
-        while (DateTime.Now < endTime) // Loop until time is up
+        public ListingActivity() : base("List Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
         {
-           string itme = Console.ReadLine();
-           if (item.ToLower() == "done") 
-           break;
-           items.Add(item);
+
         }
-        Console.WriteLine($"You listed {items.Count} items.");
-        EndActivity(); // Call to end the activity
+        // Executes the listing activity
+        public override void Execute()
+        {
+            StartActivity();
+            Random rand = new Random();
+            string prompt = _prompts[rand.Next(_prompts.Count)];
+            Console.WriteLine(prompt);
+            ShowSpinner(5);
+            Console.WriteLine("Start listing items (press enter after each item, type 'done' to finish):");
+
+            List<string> items = new List<string>();
+            // Set end time based on duration
+            DateTime endTime = DateTime.Now.AddSeconds(_durationInSeconds);
+
+            while (DateTime.Now < endTime) // Loop until time is up
+            {
+                string item = Console.ReadLine();
+                if (item.ToLower() == "done")
+                    break;
+                items.Add(item);
+            }
+            Console.WriteLine($"You listed {items.Count} items.");
+            EndActivity(); // Call to end the activity
         }
     }
 }
