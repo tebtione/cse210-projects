@@ -1,56 +1,59 @@
 using System;
 
-class Program
+namespace MindfulnessProgram
 {
-    static void Main(string[] args)
+    class Program
     {
-        // Console.WriteLine("Hello Develop05 World!");
-
-        // Main loop for choosing activities
-        while (true)
+        static void Main(string[] args)
         {
-            Console.Clear();
-            Console.WriteLine("Choose an activity:");
-            Console.WriteLine("1. Breathing Activity");
-            Console.WriteLine("2. Reflection Activity");
-            Console.WriteLine("3. Listing Activity");
-            Console.WriteLine("4. Exit");
+            // Console.WriteLine("Hello Develop05 World!");
 
-            string choice = Console.ReadLine(); // Read user choice
-            switch (choice) // Handle user choice
+            // Main loop for choosing activities
+            while (true)
             {
-                case "1": 
-                BreathingActivity breathingActivity = new BreathingActivity();
-                // Create instance of BreathingActivity
+                Console.Clear();
+                Console.WriteLine("Choose an activity:");
+                Console.WriteLine("1. Breathing Activity");
+                Console.WriteLine("2. Reflection Activity");
+                Console.WriteLine("3. Listing Activity");
+                Console.WriteLine("4. Exit");
 
-                breathingActivity.StartActivity(); // Start the activity
-                breathingActivity.ExecuteActivity();
-                break;
+                string choice = Console.ReadLine(); // Read user choice
+                switch (choice) // Handle user choice
+                {
+                    case "1":
+                        BreathingActivity breathingActivity = new BreathingActivity();
+                        // Create instance of BreathingActivity
 
-                case "2":
-                ReflectionActivity reflectionActivity = new ReflectionActivity();
+                        breathingActivity.StartActivity(); // Start the activity
+                        breathingActivity.Execute();
+                        break;
 
-                reflectionActivity.StartActivity();
-                reflectionActivity.ExecuteActivity();
-                break;
+                    case "2":
+                        ReflectionActivity reflectionActivity = new ReflectionActivity();
 
-                case "3":
-                ListingActivity listActivity = new ListingActivity();
+                        reflectionActivity.StartActivity();
+                        reflectionActivity.Execute();
+                        break;
 
-                listActivity.StartActivity();
-                listActivity.ExecuteActivity(); // Execute the activity
-                break;
+                    case "3":
+                        ListingActivity listActivity = new ListingActivity();
 
-                case "4":
-                return; // Exit the program
+                        listActivity.StartActivity();
+                        listActivity.Execute(); // Execute the activity
+                        break;
 
-                default:
-                Console.WriteLine("Invalid choice. Please try again.");
-                break;
+                    case "4":
+                        return; // Exit the program
+
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey(); // Wait for the user input
+
             }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey(); // Wait for the user input
-            
         }
     }
 }
