@@ -141,7 +141,7 @@ namespace EternalQuest
 
         private static void LoadGoals()
         {
-            if (File.Exists("goal.txt"))
+            if (File.Exists("goals.txt"))
             {
                 string[] lines = File.ReadAllLines("goals.txt");
                 foreach (string line in lines)
